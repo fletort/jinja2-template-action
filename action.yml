@@ -19,6 +19,8 @@ runs:
   steps:
     - name: "Manage Dynamic Template"
       shell: bash
+      env:
+        GITHUB: ${{ toJson(github) }}
       run: |
         # Need to export multiline variables input to pass it to python script
         export INPUT_VARIABLES="${{ inputs.variables }}"
